@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_winners_meet,access_winners_meet,model_logic_winners_meet,base.group_user,1,1,1,1
+access_hock_software_access,access_hock_software_access,model_logic_hock_access,base.group_user,1,1,1,1
+access_text_material,access_text_material,model_logic_text_material,base.group_user,1,1,1,1
+access_link_generation,access_link_generation,model_form_link_generation_wizard,base.group_user,1,1,1,1
+
+access_class_commencement,access_class_commencement,model_logic_class_commencement,base.group_user,1,1,1,1
+access_paper_options,access_paper_options,model_logic_paper_options,base.group_user,1,1,1,1
+access_paper_options_mode,access_paper_options_mode,model_logic_paper_options_mode,base.group_user,1,1,1,1
+
+access_faculty_feedback,access_faculty_feedback,model_logic_faculty_feedback,base.group_user,1,1,1,1
+access_result_service,access_result_service,model_logic_result_service,base.group_user,1,1,1,1

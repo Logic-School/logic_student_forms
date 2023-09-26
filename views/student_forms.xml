@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="css_link_feedback_form" name="CSS Link"
+              inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="student_feedback/static/src/css/rating.css"/>
+        </xpath>
+    </template>
+    
+    <record model="ir.actions.act_window" id="winners_meet_action">
+        <field name="name">Winners Meet</field>
+        <field name="res_model">logic.winners.meet</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hock_access_action">
+        <field name="name">Hock Software Access</field>
+        <field name="res_model">logic.hock.access</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="text_material_action">
+        <field name="name">Text Material</field>
+        <field name="res_model">logic.text.material</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Student Forms" id="menu_student_forms"
+              action="winners_meet_action"
+              sequence="6"
+              web_icon="logic_student_forms/static/description/icon.png"/>
+
+    <menuitem name="Forms" id="menu_forms"
+              parent="menu_student_forms"
+              sequence="1"/>
+    <menuitem name="Winners Meet" id="menu_winners_meet"
+              action="winners_meet_action"
+              parent="menu_forms"
+              sequence="1"/>
+    <menuitem name="Hock Access" id="menu_hock_access"
+              action="hock_access_action"
+              parent="menu_forms"
+              sequence="2"/>
+    <menuitem name="Text Material" id="menu_text_material"
+              action="text_material_action"
+              parent="menu_forms"
+              sequence="3"/>
+
+
+
+    <record id="winners_meet_tree_view" model="ir.ui.view">
+        <field name="name">Winners Meet List</field>
+        <field name="model">logic.winners.meet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+                <field name="batch_id"/>
+                <field name="class_teacher"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="winners_meet_form_view" model="ir.ui.view">
+        <field name="name">Winners Meet Form</field>
+        <field name="model">logic.winners.meet</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="phone" />
+                            <field name="group"/>
+                            <field name="class_teacher"/>
+                            <field name="batch_id"/>
+                            <field name="campus_name"/>
+                            <field name="mode_of_study"/>
+                            <field name="part"/>
+                            <field name="qualification_status"/>        
+                        </group>
+                        <group>
+                            <field name="student_photo" widget="image" style="width:150px;height:150px;"/>
+                            <field name="result_screenshot" widget="image" style="width:150px;height:150px;"/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="hock_access_tree_view" model="ir.ui.view">
+        <field name="name">Hock Access List</field>
+        <field name="model">logic.hock.access</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="batch_id"/>
+                <field name="campus_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hock_access_form_view" model="ir.ui.view">
+        <field name="name">Hock Access Form</field>
+        <field name="model">logic.hock.access</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="email"/>
+                            <field name="batch_id"/>
+                            <field name="campus_name"/>   
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="study_material_tree_view" model="ir.ui.view">
+        <field name="name">Study Material Req List</field>
+        <field name="model">logic.text.material</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="batch_id"/>
+                <field name="class_teacher"/>
+                <field name="campus_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="text_material_form_view" model="ir.ui.view">
+        <field name="name">Text Material Form</field>
+        <field name="model">logic.text.material</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name" />
+                            <field name="email"/>
+                            <field name="batch_id"/>
+                            <field name="campus_name"/>
+                            <field name="class_teacher"/>
+                            <field name="mobile"/>
+                        </group>
+                        <group>
+                            <field name="receipt_screenshot" widget="image" style="width:300px;height:300px;"/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

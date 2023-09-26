@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="class_commencement_form_template" name="Class Commencement Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <script>
+                    function ModeShowHide(e){
+                        if (e.checked)
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="class_mode")
+                                {
+                                    children[i].value="online"
+                                    children[i].style.display = "";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="class_mode")
+                                {
+                                    children[i].value = "nil";
+                                    children[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+
+                        <h2 class="m-4 text-center"><u>Class Commencement Form </u></h2>
+
+                        <form id="commence_form" action="/class_commencement/submit" enctype="multipart/form-data" class="oe_import" method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Full Name</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="student_name"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Email</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="email"
+                                                   class="form-control s_website_form_input" name="email"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ACCA Reg No.</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="acca_reg_no"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                                style="width: 200px">
+                                            <span class="s_website_form_label_content">Date of Birth</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="date"
+                                                    class="form-control s_website_form_input" name="dob"
+                                                    required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Student Whatsapp No</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="student_whatsapp"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Parent Whatsapp No</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="parent_whatsapp"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                                style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select name="batch" id="batch"
+                                                    class="form-control link-style">
+                                                <option value="regular" t-esc="'Logic Regular Student'"/>
+                                                <option value="paper_wise" t-esc="'Paper Wise'"/>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Paper Options</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm" >
+                                            <t t-foreach="paper_options" t-as="paper_option">
+                                                <div class="row m-3">
+                                                    <input type="checkbox"
+                                                        class="" name="paper_options"
+                                                        t-att-value="paper_option['id']"
+                                                        t-att-id = "paper_option['id']"
+                                                        multiple="multiple"
+                                                        onclick="ModeShowHide(this);"
+                                                        />
+                                                    <select name="class_modes" id="class_mode"
+                                                            class="ml-3 mr-3" 
+                                                            style="display:none;"
+
+                                                            >
+                                                        <option value="" t-esc="''"/>
+                                                        <option value="online" t-esc="'Online'"/>
+                                                        <option value="offline" t-esc="'Offline'"/>
+                                                        <option value="blended" t-esc="'Blended'"/>
+
+                                                    </select> 
+                                                    <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/> 
+
+
+
+
+                                                </div>
+
+                                            </t>
+                                        </div>
+                                  
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                                style="width: 200px">
+                                            <span class="s_website_form_label_content">Attempt</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select name="attempt" id="attempt"
+                                                    class="form-control link-style">
+                                                <option value="first" t-esc="'First'"/>
+                                                <option value="resit" t-esc="'Resit'"/>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>  
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

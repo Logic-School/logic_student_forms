@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="paper_option_1" model="logic.paper.options">
+            <field name="name">BT - BUSINESS AND TECHNOLOGY</field>
+            <field name="paper_name">BUSINESS AND TECHNOLOGY</field>
+            <field name="abbr">BT</field>
+        </record>
+        <record id="paper_option_2" model="logic.paper.options">
+            <field name="name">MA - MANAGEMENT ACCOUNTING</field>
+            <field name="paper_name">MANAGEMENT ACCOUNTING</field>
+            <field name="abbr">MA</field>
+        </record>        
+        <record id="paper_option_3" model="logic.paper.options">
+            <field name="name">FA - FINANCIAL ACCOUNTING</field>
+            <field name="paper_name">FINANCIAL ACCOUNTING</field>
+            <field name="abbr">FA</field>
+        </record>        
+        <record id="paper_option_4" model="logic.paper.options">
+            <field name="name">LW - LAW</field>
+            <field name="paper_name">LAW</field>
+            <field name="abbr">LW</field>
+        </record>        
+        <record id="paper_option_5" model="logic.paper.options">
+            <field name="name">PM - PERFORMANCE MANAGEMENT</field>
+            <field name="paper_name">PERFORMANCE MANAGEMENT</field>
+            <field name="abbr">PM</field>
+        </record>        
+        <record id="paper_option_6" model="logic.paper.options">
+            <field name="name">TX UK - TAXATION UK</field>
+            <field name="paper_name">TAXATION UK</field>
+            <field name="abbr">TX UK</field>
+        </record>
+        <record id="paper_option_7" model="logic.paper.options">
+            <field name="name">FR - FINANCIAL REPORTING</field>
+            <field name="paper_name">FINANCIAL REPORTING</field>
+            <field name="abbr">FR</field>
+        </record>
+        <record id="paper_option_8" model="logic.paper.options">
+            <field name="name">AA - AUDITING AND ASSURANCE</field>
+            <field name="paper_name">AUDITING AND ASSURANCE</field>
+            <field name="abbr">AA</field>
+        </record>
+        <record id="paper_option_9" model="logic.paper.options">
+            <field name="name">FM - FINANCIAL MANAGEMENT</field>
+            <field name="paper_name">FINANCIAL MANAGEMENT</field>
+            <field name="abbr">FM</field>
+        </record>
+        <record id="paper_option_10" model="logic.paper.options">
+            <field name="name">SBL - STRATEGIC BUSINESS LEADER</field>
+            <field name="paper_name">STRATEGIC BUSINESS LEADER</field>
+            <field name="abbr">SBL</field>
+        </record>
+        <record id="paper_option_11" model="logic.paper.options">
+            <field name="name">SBR - STRATEGIC BUSINESS REPORTING</field>
+            <field name="paper_name">STRATEGIC BUSINESS REPORTING</field>
+            <field name="abbr">SBR</field>
+        </record>
+        <record id="paper_option_12" model="logic.paper.options">
+            <field name="name">ADVANCED FINANCIAL MANAGEMENT</field>
+            <field name="paper_name">ADVANCED FINANCIAL MANAGEMENT</field>
+            <field name="abbr">AFM</field>
+        </record>
+    </data>
+</odoo>

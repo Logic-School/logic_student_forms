@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="class_commence_action">
+        <field name="name">Class Commencement</field>
+        <field name="res_model">logic.class.commencement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="faculty_feedback_action">
+        <field name="name">Faculty Feedback</field>
+        <field name="res_model">logic.faculty.feedback</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="result_service_action">
+        <field name="name">Result Service Template</field>
+        <field name="res_model">logic.result.service</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Class Commencement" id="menu_class_commence"
+              parent="menu_forms"
+              sequence="10"
+              action="class_commence_action"/>
+
+    <menuitem name="Faculty Feedback" id="menu_faculty_feedback"
+              parent="menu_forms"
+              sequence="10"
+              action="faculty_feedback_action"/>
+
+    <menuitem name="Result Service" id="menu_result_service"
+              parent="menu_forms"
+              sequence="10"
+              action="result_service_action"/>
+
+    <record id="class_commencement_form_view" model="ir.ui.view">
+        <field name="name">Class Commencement Form</field>
+        <field name="model">logic.class.commencement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="email" />
+                            <field name="acca_reg_no"/>
+                            <field name="dob"/>
+                            <field name="batch"/>
+                            <field name="attempt"/>
+                        </group>
+                        <group>
+                            <field name="student_whatsapp"/>
+                            <field name="parent_whatsapp"/>
+                        </group>
+                    </group>
+                <notebook>
+                    <page string="Papers">
+                        <field name="paper_options">
+                            <tree>
+                                <field name="name"/>
+                                <field name="class_mode"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="faculty_feedback_form_view" model="ir.ui.view">
+        <field name="name">Faculty Feedback Form</field>
+        <field name="model">logic.faculty.feedback</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="faculty"/>
+                            <field name="class_id"/>
+                            <field name="student_rating" widget="priority"/>
+                        </group>
+                        <group>
+                            <field name="feedback"/>
+                        </group>    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="faculty_feedback_tree_view" model="ir.ui.view">
+        <field name="name">Faculty Feedback List</field>
+        <field name="model">logic.faculty.feedback</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+                <field name="faculty"/>
+                <field name="class_id"/>
+                <field name="student_rating" widget="priority"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="result_service_form_view" model="ir.ui.view">
+        <field name="name">Result Service Form</field>
+        <field name="model">logic.result.service</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="email" />
+                            <field name="acca_reg_no"/>
+                            <field name="phone"/>
+                            <field name="dob"/>
+                        </group>
+
+                    </group>
+                <notebook>
+                    <page string="Exam 1 Papers">
+                        <field name="exam_papers_1">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Exam 2 Papers">
+                        <field name="exam_papers_2">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Exam 3 Papers">
+                        <field name="exam_papers_3">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>
