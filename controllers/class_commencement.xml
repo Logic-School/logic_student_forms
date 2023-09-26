@@ -4,6 +4,12 @@
         <t t-call="website.layout">
             <div id="request_form">
                 <script>
+                    window.addEventListener("pageshow", ResetValues);
+                    function ResetValues() {
+                        var form = document.getElementsByTagName('form'); 
+                        // let the browser natively reset defaults
+                        form[0].reset();
+                    };
                     function ModeShowHide(e){
                         if (e.checked)
                         {

@@ -46,7 +46,7 @@ class ClassCommencementForm(http.Controller):
             for i in range(len(selected_paper_ids)):
                 paper_mode_option = request.env["logic.paper.options.mode"].sudo().search([('id','=',int(selected_paper_ids[i])),('class_mode','=',selected_modes[i])])
                 if paper_mode_option:
-                    paper_moded_id = paper_mode_option.id
+                    paper_moded_id = paper_mode_option[0].id
                 else:
                     paper_moded_id = request.env["logic.paper.options.mode"].sudo().create({
                         'name': request.env['logic.paper.options'].browse(int(selected_paper_ids[i])).name ,
