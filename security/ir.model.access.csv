@@ -11,3 +11,9 @@ access_paper_options_mode,access_paper_options_mode,model_logic_paper_options_mo
 
 access_faculty_feedback,access_faculty_feedback,model_logic_faculty_feedback,base.group_user,1,1,1,1
 access_result_service,access_result_service,model_logic_result_service,base.group_user,1,1,1,1
+
+access_acca_results,access_acca_results,model_logic_acca_results,base.group_user,1,1,1,1
+access_acca_result_window,access_acca_result_window,model_logic_acca_result_window,base.group_user,1,1,1,1
+access_acca_student_result,access_acca_student_result,model_logic_acca_student_result,base.group_user,1,1,1,1
+
+

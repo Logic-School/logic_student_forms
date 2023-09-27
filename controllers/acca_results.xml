@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="acca_results_form_template" name="ACCA Results Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <script>
+                    <!-- window.addEventListener("pageshow", ResetValues);
+                    function ResetValues() {
+                        var form = document.getElementsByTagName('form'); 
+                        // let the browser natively reset defaults
+                        form[0].reset();
+                    }; -->
+                    function ModeShowHide(e){
+                        if (e.checked)
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="exam_mark")
+                                {
+                                    children[i].value=""
+                                    children[i].style.display = "";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="exam_mark")
+                                {
+                                    children[i].value = "";
+                                    children[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+
+                        <h2 class="m-4 text-center"><u><span t-esc="result_window.name+' Results'"/></u></h2>
+
+                        <form id="acca_results_form" action="/acca_results/submit" enctype="multipart/form-data" class="oe_import" method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Full Name</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="student_name"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" name="result_window" t-att-value="result_window.id" style="display:none"/>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                            style="width: 200px">
+                                            <span class="s_website_form_label_content">ACCA Reg No.</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                class="form-control s_website_form_input" name="acca_reg_no"
+                                                required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                            style="width: 200px">
+                                            <span class="s_website_form_label_content">Whatsapp No.</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="tel"
+                                                class="form-control s_website_form_input" name="whatsapp_no"
+                                                required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                                style="width: 200px">
+                                            <span class="s_website_form_label_content">Branch</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select name="branch" id="branch"
+                                                    class="form-control link-style">
+                                                <t t-foreach="branches" t-as="branch">
+                                                    <option t-att-value="branch.id" t-esc="branch.branch_name"/>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Results</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm" >
+                                            <table class="table table-responsive">
+                                                <thead>
+                                                    <th>Paper</th>
+                                                    <th>Exam 1 Marks</th>
+                                                    <th>Exam 2 Marks</th>
+                                                </thead>
+                                                <t t-foreach="paper_options" t-as="paper_option">
+                                                    <tr class="">
+                                                        <td class="m-3">
+                                                            <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/> 
+                                                        </td>
+                                                        <td class="m-3">
+                                                            <input type="checkbox"
+                                                            class="" name="paper_options_1"
+                                                            t-att-value="paper_option['id']"
+                                                            t-att-id = "paper_option['id']"
+                                                            multiple="multiple"
+                                                            onclick="ModeShowHide(this);"
+                                                            />
+                                                            <input type="number"
+                                                                id="exam_mark"
+                                                                style="display:none;width:60px;"
+                                                                class="" name="exam_marks_1"
+                                                                multiple="multiple"
+                                                                />
+                                                            <!-- <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/>  -->
+                                                        </td>
+                                                        <td class="m-3">
+                                                                <input type="checkbox"
+                                                                class="" name="paper_options_2"
+                                                                multiple="multiple"
+                                                                t-att-value="paper_option['id']"
+                                                                t-att-id = "paper_option['id']"
+                                                                onclick="ModeShowHide(this);"
+                                                                />
+                                                                <input type="number"
+                                                                    id="exam_mark"
+                                                                    style="display:none;width:60px;"                                                                    
+                                                                    name="exam_marks_2"
+                                                                    multiple="multiple"
+                                                                    />
+                                                            <!-- <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/>  -->
+                                                        </td>
+                                                    </tr>
+
+                                                </t>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>  
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

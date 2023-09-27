@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="result_service_form_template" name="Result Service Template Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <script>
+                    window.addEventListener("pageshow", ResetValues);
+                    function ResetValues() {
+                        var form = document.getElementsByTagName('form'); 
+                        // let the browser natively reset defaults
+                        form[0].reset();
+                    };
+                    function ModeShowHide(e){
+                        if (e.checked)
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="class_mode")
+                                {
+                                    children[i].value="online"
+                                    children[i].style.display = "";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var children = e.parentNode.children
+                            for (var i = 0; i &lt; children.length; i++) {
+                                if(children[i].id=="class_mode")
+                                {
+                                    children[i].value = "nil";
+                                    children[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+
+                        <h2 class="m-4 text-center"><u>Result Service Form </u></h2>
+
+                        <form id="commence_form" action="/result_service_template/submit" enctype="multipart/form-data" class="oe_import" method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">First Name</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="first_name"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Last Name</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="last_name"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Phone No.</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="tel"
+                                                   class="form-control s_website_form_input" name="phone"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Email</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="email"
+                                                   class="form-control s_website_form_input" name="email"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ACCA Reg No.</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="acca_reg_no"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                                style="width: 200px">
+                                            <span class="s_website_form_label_content">Date of Birth</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="date"
+                                                    class="form-control s_website_form_input" name="dob"
+                                                    required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Paper Options</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm" >
+                                            <table class="table table-responsive">
+                                                <thead>
+                                                    <th>Paper</th>
+                                                    <th>Exam 1</th>
+                                                    <th>Exam 2</th>
+                                                    <th>Exam 3</th>
+                                                </thead>
+                                                <t t-foreach="paper_options" t-as="paper_option">
+                                                    <tr class="">
+                                                        <td class="m-3">
+                                                            <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/> 
+                                                        </td>
+                                                        <td class="m-3">
+
+                                                            <input type="checkbox"
+                                                                class="" name="paper_options_1"
+                                                                t-att-value="paper_option['id']"
+                                                                t-att-id = "paper_option['id']"
+                                                                multiple="multiple"
+                                                                onclick="ModeShowHide(this);"
+                                                                />
+                                                            <select name="class_modes_1" id="class_mode"
+                                                                    class="ml-3 mr-3" 
+                                                                    style="display:none;"
+
+                                                                    >
+                                                                <option value="" t-esc="''"/>
+                                                                <option value="online" t-esc="'Online'"/>
+                                                                <option value="offline" t-esc="'Offline'"/>
+                                                                <option value="blended" t-esc="'Blended'"/>
+
+                                                            </select> 
+                                                            <!-- <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/>  -->
+                                                        </td>
+                                                        <td class="m-3">
+                                                            <input type="checkbox"
+                                                                class="" name="paper_options_2"
+                                                                t-att-value="paper_option['id']"
+                                                                t-att-id = "paper_option['id']"
+                                                                multiple="multiple"
+                                                                onclick="ModeShowHide(this);"
+                                                                />
+                                                            <select name="class_modes_2" id="class_mode"
+                                                                    class="ml-3 mr-3" 
+                                                                    style="display:none;"
+
+                                                                    >
+                                                                <option value="" t-esc="''"/>
+                                                                <option value="online" t-esc="'Online'"/>
+                                                                <option value="offline" t-esc="'Offline'"/>
+                                                                <option value="blended" t-esc="'Blended'"/>
+
+                                                            </select> 
+                                                            <!-- <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/>  -->
+
+                                                        </td>
+                                                        <td class="m-3">
+                                                            <input type="checkbox"
+                                                                class="" name="paper_options_3"
+                                                                t-att-value="paper_option['id']"
+                                                                t-att-id = "paper_option['id']"
+                                                                multiple="multiple"
+                                                                onclick="ModeShowHide(this);"
+                                                                />
+                                                            <select name="class_modes_3" id="class_mode"
+                                                                    class="ml-3 mr-3" 
+                                                                    style="display:none;"
+
+                                                                    >
+                                                                <option value="" t-esc="''"/>
+                                                                <option value="online" t-esc="'Online'"/>
+                                                                <option value="offline" t-esc="'Offline'"/>
+                                                                <option value="blended" t-esc="'Blended'"/>
+
+                                                            </select> 
+                                                            <!-- <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/>  -->
+
+                                                        </td>
+                                                    </tr>
+
+                                                </t>
+                                            </table>
+                                        </div>
+                                  
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>  
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

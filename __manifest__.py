@@ -11,6 +11,8 @@
         'controllers/text_material.xml',
         'controllers/class_commencement.xml',
         'controllers/faculty_feedback.xml',
+        'controllers/result_service_template.xml',
+        'controllers/acca_results.xml',
         'views/student_forms.xml',
         'views/student_forms_2.xml',
         'views/paper_options.xml',

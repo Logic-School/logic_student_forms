@@ -176,9 +176,6 @@
                                                     </select> 
                                                     <label class="m-2" t-att-for="paper_option['id']" t-esc="paper_option['paper_name']"/> 
 
-
-
-
                                                 </div>
 
                                             </t>

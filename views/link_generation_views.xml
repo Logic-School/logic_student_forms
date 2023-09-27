@@ -33,7 +33,7 @@
                         <label for="winners_batch_id" />
 
                         <div class="o_row">
-                            <field name="winners_batch_id" options="{'no_create':True}" />
+                            <field name="winners_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
                             <field name="winners_link" />
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
@@ -49,8 +49,8 @@
                         <label for="hock_batch_id" />
 
                         <div class="o_row">
-                            <field name="hock_batch_id" options="{'no_create':True}" />
-                            <field name="hock_link" />
+                            <field name="hock_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
+                            <field name="hock_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
@@ -65,8 +65,8 @@
                         <label for="material_batch_id" />
 
                         <div class="o_row">
-                            <field name="material_batch_id" options="{'no_create':True}" />
-                            <field name="material_link" />
+                            <field name="material_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
+                            <field name="material_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
@@ -81,16 +81,62 @@
                         <label for="faculty_id" />
 
                         <div class="o_row">
-                            <field name="faculty_id" options="{'no_create':True}" />
-                            <field name="class_id" options="{'no_create':True}" />
+                            <field name="faculty_id" placeholder="Select Faculty" options="{'no_create':True}" />
+                            <field name="class_id" placeholder="Select Class" options="{'no_create':True}"/>
 
-                            <field name="faculty_feedback_link" />
+                            <field name="faculty_feedback_link" placeholder="Link" />
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
                                 onclick="copyLink('faculty_feedback_link')" type="object" />
+
+                            <!-- <button name="custom_method" string="Copy to Clipboard"
+                            type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
+                        </div>
+
+                        <label for="class_commencement_link" />
+
+                        <div class="o_row">
+                            <field name="class_commencement_link" placeholder="Link"/>
+
+                            <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
+                            attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
+                            Meet</button> -->
+                            <button string="Copy Link" name="show_copy_successful"
+                                onclick="copyLink('class_commencement_link')" type="object" />
+
+                            <!-- <button name="custom_method" string="Copy to Clipboard"
+                            type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
+                        </div>
+
+                        <label for="result_service_link" />
+
+                        <div class="o_row">
+                            <field name="result_service_link" placeholder="Link"/>
+
+                            <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
+                            attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
+                            Meet</button> -->
+                            <button string="Copy Link" name="show_copy_successful"
+                                onclick="copyLink('result_service_link')" type="object" />
+
+                            <!-- <button name="custom_method" string="Copy to Clipboard"
+                            type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
+                        </div>
+
+                        <label for="acca_result_window_id" />
+
+                        <div class="o_row">
+                            <field name="acca_result_window_id" placeholder="Select Window"/>
+                            <field name="acca_results_link" placeholder="Link" />
+
+                            <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
+                            attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
+                            Meet</button> -->
+                            <button string="Copy Link" name="show_copy_successful"
+                                onclick="copyLink('acca_results_link')" type="object" />
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->

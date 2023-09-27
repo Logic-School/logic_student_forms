@@ -18,6 +18,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="acca_result_action">
+        <field name="name">ACCA Results</field>
+        <field name="res_model">logic.acca.results</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
 
     <menuitem name="Class Commencement" id="menu_class_commence"
               parent="menu_forms"
@@ -33,6 +40,11 @@
               parent="menu_forms"
               sequence="10"
               action="result_service_action"/>
+
+    <menuitem name="ACCA Results" id="menu_acca_results"
+              parent="menu_forms"
+              sequence="10"
+              action="acca_result_action"/>
 
     <record id="class_commencement_form_view" model="ir.ui.view">
         <field name="name">Class Commencement Form</field>
@@ -127,6 +139,7 @@
                         <field name="exam_papers_1">
                             <tree>
                                 <field name="name"/>
+                                <field name="class_mode"/>
                             </tree>
                         </field>
                     </page>
@@ -135,6 +148,8 @@
                         <field name="exam_papers_2">
                             <tree>
                                 <field name="name"/>
+                                <field name="class_mode"/>
+
                             </tree>
                         </field>
                     </page>
@@ -143,9 +158,54 @@
                         <field name="exam_papers_3">
                             <tree>
                                 <field name="name"/>
+                                <field name="class_mode"/>
+
                             </tree>
                         </field>
                     </page>
+                </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="acca_result_form_view" model="ir.ui.view">
+        <field name="name">ACCA Result Form</field>
+        <field name="model">logic.acca.results</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="acca_reg_no"/>
+                            <field name="result_window"/>
+                            <field name="branch" />
+                            <field name="whatsapp_no"/>
+                        </group>
+
+                    </group>
+                <notebook>
+                    <page string="Exam 1 Results">
+                        <field name="exam1_results">
+                            <tree>
+                                <field name="paper_id"/>
+                                <field name="marks"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Exam 2 Results">
+                        <field name="exam2_results">
+                            <tree>
+                                <field name="paper_id"/>
+                                <field name="marks"/>
+
+                            </tree>
+                        </field>
+                    </page>
+
                 </notebook>
                 </sheet>
             </form>

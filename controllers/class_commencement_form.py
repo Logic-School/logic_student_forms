@@ -21,8 +21,6 @@ class ClassCommencementForm(http.Controller):
     def class_commencement_form_submit(self, **kw):
         logger = logging.getLogger("Error Logger")
 
-
-
         try:
             selected_paper_ids = request.httprequest.form.getlist('paper_options')
             selected_modes = request.httprequest.form.getlist('class_modes')
@@ -44,7 +42,7 @@ class ClassCommencementForm(http.Controller):
                 if selected_modes[i]=='':
                     selected_modes.pop(i)
             for i in range(len(selected_paper_ids)):
-                paper_mode_option = request.env["logic.paper.options.mode"].sudo().search([('id','=',int(selected_paper_ids[i])),('class_mode','=',selected_modes[i])])
+                paper_mode_option = request.env["logic.paper.options.mode"].sudo().search([('paper_id','=',int(selected_paper_ids[i])),('class_mode','=',selected_modes[i])])
                 if paper_mode_option:
                     paper_moded_id = paper_mode_option[0].id
                 else:

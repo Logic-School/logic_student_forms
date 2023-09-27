@@ -3,6 +3,14 @@
     <template id="text_material_form_template" name="Text Material Request Form">
         <t t-call="website.layout">
             <div id="request_form">
+                <script>
+                    window.addEventListener("pageshow", ResetValues);
+                    function ResetValues() {
+                        var form = document.getElementsByTagName('form'); 
+                        // let the browser natively reset defaults
+                        form[0].reset();
+                    };
+                </script>
                 <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
                     <div class="container">
                         <h2 class="m-4 text-center"><u>Text Material Request Form</u></h2>

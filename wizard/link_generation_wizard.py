@@ -9,11 +9,20 @@ class FormLinkGenerationWizard(models.TransientModel):
     
     faculty_id = fields.Many2one("faculty.details",string="Faculty Feedback")
     class_id = fields.Many2one("logic.base.class", string="Class")
+    acca_result_window_id = fields.Many2one('logic.acca.result.window',string="Result Window")
     winners_link = fields.Char(string="Winners Meet Form",default="")
     hock_link = fields.Char(string="Hock Access Form")
     material_link = fields.Char(string="Study Material Form")
+    acca_results_link = fields.Char(string="ACCA Result Form")
     faculty_feedback_link = fields.Char(string="Faculty Feedback Form",default="")
+    class_commencement_link = fields.Char(string="ACCA Class Commencement",default=lambda self: self.env.company.website+"/"+"class_commencement")
+    result_service_link = fields.Char(string="Result Service",default=lambda self: self.env.company.website+"/"+"result_service_template")
 
+    @api.onchange('faculty_id')
+    def onchange_domain(self):
+        class_ids = self.env['logic.base.class'].search([('tutor_id','=',self.faculty_id.name.id)]).ids
+  
+        return {'domain' : {'class_id' : [('id', 'in', class_ids)]}}
 
     def generate_link(self,batch,form_type):
         int_bytes = batch.id.to_bytes((batch.id.bit_length() + 7) // 8, 'big')
@@ -43,6 +52,13 @@ class FormLinkGenerationWizard(models.TransientModel):
             self.material_link = False
         else:
             self.material_link = self.generate_link(self.material_batch_id,'text_material')
+
+    @api.onchange('acca_result_window_id')
+    def generate_acca_results_link(self):
+        if not self.acca_result_window_id:
+            self.acca_results_link = False
+        else:
+            self.acca_results_link = self.generate_link(self.acca_result_window_id,'acca_results')
 
 
     @api.onchange('faculty_id','class_id')
