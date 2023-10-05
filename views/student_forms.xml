@@ -152,6 +152,7 @@
                             <field name="email"/>
                             <field name="batch_id"/>
                             <field name="campus_name"/>
+                            <field name="admission_no"/>
                             <field name="class_teacher"/>
                             <field name="mobile"/>
                         </group>

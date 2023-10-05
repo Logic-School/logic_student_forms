@@ -33,7 +33,7 @@ class TextMaterialForm(http.Controller):
                 'class_teacher': kw.get('class_teacher'),
                 'mobile': kw.get('mobile'),
                 'receipt_screenshot': base64.b64encode(receipt_screenshot.read()) if type(receipt_screenshot)!=str else False,
-
+                'admission_no':kw.get('admission_no')
             })
             # products = request.env['product.product'].search([])
             # values = {

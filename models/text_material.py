@@ -16,6 +16,7 @@ class TextMaterialRequest(models.Model):
     email = fields.Char(string="Email")
     batch_id = fields.Many2one('logic.base.batch',string="Batch")
     campus_name = fields.Char(string="Campus Name")
+    admission_no = fields.Char(string="Admission No")
     class_teacher = fields.Char(string="Class Teacher")
     mobile = fields.Char(string="Mobile")
     receipt_screenshot = fields.Binary(string="Receipt Screenshot")

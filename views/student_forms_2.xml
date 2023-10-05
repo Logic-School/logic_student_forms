@@ -69,7 +69,7 @@
                 <notebook>
                     <page string="Papers">
                         <field name="paper_options">
-                            <tree>
+                            <tree create="0">
                                 <field name="name"/>
                                 <field name="class_mode"/>
                             </tree>
@@ -137,7 +137,7 @@
                 <notebook>
                     <page string="Exam 1 Papers">
                         <field name="exam_papers_1">
-                            <tree>
+                            <tree create="0">
                                 <field name="name"/>
                                 <field name="class_mode"/>
                             </tree>
@@ -146,7 +146,7 @@
 
                     <page string="Exam 2 Papers">
                         <field name="exam_papers_2">
-                            <tree>
+                            <tree create="0">
                                 <field name="name"/>
                                 <field name="class_mode"/>
 
@@ -156,7 +156,7 @@
 
                     <page string="Exam 3 Papers">
                         <field name="exam_papers_3">
-                            <tree>
+                            <tree create="0">
                                 <field name="name"/>
                                 <field name="class_mode"/>
 
@@ -189,7 +189,7 @@
                 <notebook>
                     <page string="Exam 1 Results">
                         <field name="exam1_results">
-                            <tree>
+                            <tree create="0">
                                 <field name="paper_id"/>
                                 <field name="marks"/>
                             </tree>
@@ -198,7 +198,7 @@
 
                     <page string="Exam 2 Results">
                         <field name="exam2_results">
-                            <tree>
+                            <tree create="0">
                                 <field name="paper_id"/>
                                 <field name="marks"/>
 
