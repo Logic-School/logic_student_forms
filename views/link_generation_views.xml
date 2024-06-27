@@ -9,9 +9,10 @@
     </record>
 
     <menuitem name="Form Links" id="menu_form_links"
-        action="link_generation_action"
-        parent="menu_student_forms"
-        sequence="4" />
+              action="link_generation_action"
+              parent="menu_student_forms"
+              sequence="4"
+              groups="logic_student_forms.form_academic_department"/>
 
     <record id="link_generation_form" model="ir.ui.view">
         <field name="name">Link Generation Form</field>
@@ -30,73 +31,73 @@
                 </script>
                 <sheet>
                     <group>
-                        <label for="winners_batch_id" />
+                        <label for="winners_batch_id"/>
 
                         <div class="o_row">
-                            <field name="winners_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
-                            <field name="winners_link" />
+                            <field name="winners_batch_id" placeholder="Select Batch" options="{'no_create':True}"/>
+                            <field name="winners_link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('winners_link')" type="object" />
+                                    onclick="copyLink('winners_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="hock_batch_id" />
+                        <label for="hock_batch_id"/>
 
                         <div class="o_row">
-                            <field name="hock_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
+                            <field name="hock_batch_id" placeholder="Select Batch" options="{'no_create':True}"/>
                             <field name="hock_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('hock_link')" type="object" />
+                                    onclick="copyLink('hock_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="material_batch_id" />
+                        <label for="material_batch_id"/>
 
                         <div class="o_row">
-                            <field name="material_batch_id" placeholder="Select Batch" options="{'no_create':True}" />
+                            <field name="material_batch_id" placeholder="Select Batch" options="{'no_create':True}"/>
                             <field name="material_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('material_link')" type="object" />
+                                    onclick="copyLink('material_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="faculty_id" />
+                        <label for="faculty_id"/>
 
                         <div class="o_row">
-                            <field name="faculty_id" placeholder="Select Faculty" options="{'no_create':True}" />
+                            <field name="faculty_id" placeholder="Select Faculty" options="{'no_create':True}"/>
                             <field name="class_id" placeholder="Select Class" options="{'no_create':True}"/>
 
-                            <field name="faculty_feedback_link" placeholder="Link" />
+                            <field name="faculty_feedback_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('faculty_feedback_link')" type="object" />
+                                    onclick="copyLink('faculty_feedback_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="class_commencement_link" />
+                        <label for="class_commencement_link"/>
 
                         <div class="o_row">
                             <field name="class_commencement_link" placeholder="Link"/>
@@ -105,13 +106,13 @@
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('class_commencement_link')" type="object" />
+                                    onclick="copyLink('class_commencement_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="result_service_link" />
+                        <label for="result_service_link"/>
 
                         <div class="o_row">
                             <field name="result_service_link" placeholder="Link"/>
@@ -120,23 +121,23 @@
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('result_service_link')" type="object" />
+                                    onclick="copyLink('result_service_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
                         </div>
 
-                        <label for="acca_result_window_id" />
+                        <label for="acca_result_window_id"/>
 
                         <div class="o_row">
                             <field name="acca_result_window_id" placeholder="Select Window"/>
-                            <field name="acca_results_link" placeholder="Link" />
+                            <field name="acca_results_link" placeholder="Link"/>
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
                             Meet</button> -->
                             <button string="Copy Link" name="show_copy_successful"
-                                onclick="copyLink('acca_results_link')" type="object" />
+                                    onclick="copyLink('acca_results_link')" type="object"/>
 
                             <!-- <button name="custom_method" string="Copy to Clipboard"
                             type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
@@ -145,7 +146,7 @@
 
                 </sheet>
                 <footer>
-                    <button string="Done" special="cancel" class="oe_highlight" />
+                    <button string="Done" special="cancel" class="oe_highlight"/>
                 </footer>
             </form>
 

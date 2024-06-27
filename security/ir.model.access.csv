@@ -16,4 +16,6 @@ access_acca_results,access_acca_results,model_logic_acca_results,base.group_user
 access_acca_result_window,access_acca_result_window,model_logic_acca_result_window,base.group_user,1,1,1,1
 access_acca_student_result,access_acca_student_result,model_logic_acca_student_result,base.group_user,1,1,1,1
 
-
+access_crash_form_link,access_acca_student_result,model_crash_form_link_generation_wizard,base.group_user,1,1,1,1
+access_crash_form,access_acca_student_result,model_logic_crash_forms,base.group_user,1,1,1,1
+access_crash_result_form,access_acca_student_result,model_logic_crash_result_forms,base.group_user,1,1,1,1

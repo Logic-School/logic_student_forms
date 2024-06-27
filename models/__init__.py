@@ -6,3 +6,4 @@ from . import result_service_template
 from . import faculty_feedback
 from . import acca_results
 from . import paper_options
+from . import crash_forms

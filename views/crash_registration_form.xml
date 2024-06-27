@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record model="ir.actions.act_window" id="registration_form_crash">
+        <field name="name">Registration Form</field>
+        <field name="res_model">logic.crash.forms</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--    <record model="ir.actions.act_window" id="paper_options_mode_action">-->
+    <!--        <field name="name">Paper Options With Mode</field>-->
+    <!--        <field name="res_model">logic.paper.options.mode</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--    </record>-->
+
+    <menuitem name="Crash Forms" id="menu_crash_form"
+              parent="menu_student_forms"
+              sequence="5"
+              groups="logic_student_forms.form_crash_department"/>
+
+    <menuitem name="Registration Form" id="menu_paper_options"
+              parent="menu_crash_form"
+              sequence="1"
+              action="registration_form_crash"/>
+
+    <!--    <menuitem name="Paper Options With Mode" id="menu_paper_options_mode"-->
+    <!--              parent="menu_paper_options_parent"-->
+    <!--              sequence="7"-->
+    <!--              action="paper_options_mode_action"/>-->
+
+    <record id="registration_list_view" model="ir.ui.view">
+        <field name="name">Registration Tree</field>
+        <field name="model">logic.crash.forms</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+                <field name="mobile_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crash_registration_form" model="ir.ui.view">
+        <field name="name">Registration Form</field>
+        <field name="model">logic.crash.forms</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="mobile_number"/>
+                            <field name="email"/>
+                            <field name="student_whatsapp"/>
+                            <field name="how_do_you_know_about_us"/>
+                            <field name="remarks"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

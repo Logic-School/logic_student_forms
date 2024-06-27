@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.module.category" id="module_students_forms">
+        <field name="name">Student Forms</field>
+        <field name="sequence">21</field>
+        <field name="visible" eval="0"/>
+    </record>
+    <record id="form_crash_department" model="res.groups">
+        <field name="name">Crash</field>
+        <field name="category_id" ref="module_students_forms"/>
+    </record>
+    <record id="form_academic_department" model="res.groups">
+        <field name="name">Academic</field>
+        <field name="category_id" ref="module_students_forms"/>
+    </record>
+
+</odoo>

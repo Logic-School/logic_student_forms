@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="crash_link_generation_action">
+        <field name="name">Form Links</field>
+        <field name="res_model">crash.form.link.generation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Crash Form Link" id="menu_forms_crash_link"
+              parent="menu_student_forms"
+              action="crash_link_generation_action"
+              sequence="10"
+              groups="logic_student_forms.form_crash_department"/>
+
+    <record id="crash_link_generation_form" model="ir.ui.view">
+        <field name="name">Link Generation Form</field>
+        <field name="model">crash.form.link.generation.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <script type="text/javascript">
+                    function copyLink(field_value)
+                    {
+                    var field_value = document.getElementsByName(field_value);
+                    if (field_value.length)
+                    {
+                    navigator.clipboard.writeText(field_value[0].value)
+                    }
+                    }
+                </script>
+                <sheet>
+                    <group>
+                        <label for="batch_id"/>
+
+                        <div class="o_row">
+                            <field name="batch_id" placeholder="Select Batch" options="{'no_create':True}"/>
+                            <field name="form_type"/>
+                            <field name="form_link"/>
+
+                            <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
+                            attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start
+                            Meet</button> -->
+                            <button string="Copy Link" name="show_copy_successful"
+                                    onclick="copyLink('form_link')" type="object"/>
+
+                            <!-- <button name="custom_method" string="Copy to Clipboard"
+                            type="button" class="o_form_button_edit btn btn-primary"/>                            </div> -->
+                        </div>
+
+
+                    </group>
+
+                </sheet>
+                <footer>
+                    <button string="Done" special="cancel" class="oe_highlight"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+</odoo>

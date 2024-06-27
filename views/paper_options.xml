@@ -15,7 +15,8 @@
 
     <menuitem name="Paper Options" id="menu_paper_options_parent"
               parent="menu_student_forms"
-              sequence="5"/>
+              sequence="5"
+              groups="logic_student_forms.form_academic_department"/>
 
     <menuitem name="Paper Options" id="menu_paper_options"
               parent="menu_paper_options_parent"

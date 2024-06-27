@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="result_form_crash">
+        <field name="name">Result Form</field>
+        <field name="res_model">logic.crash.result.forms</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Results Form" id="menu_results_form_menu"
+              parent="menu_crash_form"
+              sequence="1"
+              action="result_form_crash"/>
+
+    <record id="result_crash_list_view" model="ir.ui.view">
+        <field name="name">Result Tree</field>
+        <field name="model">logic.crash.result.forms</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+                <field name="mobile_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crash_result_form_view" model="ir.ui.view">
+        <field name="name">Results Form</field>
+        <field name="model">logic.crash.result.forms</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+<!--                    <field name="student_photo" widget='image' class="oe_avatar"-->
+<!--                           options='{"zoom": true, "preview_image":"student_photo"}'/>-->
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="mobile_number"/>
+                            <field name="student_photo" widget="binary"/>
+                            <field name="course"/>
+                            <field name="group"/>
+                            <field name="remarks"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
