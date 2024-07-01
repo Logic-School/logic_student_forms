@@ -91,13 +91,20 @@ class CrashFormLinkGenerationWizard(models.TransientModel):
 
     batch_id = fields.Many2one('logic.base.batch', string="Batch")
     form_link = fields.Char(string="Form Link")
-    form_type = fields.Selection([('registration', 'Registration'), ('results', 'Results')], string="Form Type",
+    form_type = fields.Selection([('registration', 'Registration'), ('results', 'Results'), ('mentoring', 'Mentoring')],
+                                 string="Form Type",
                                  default="registration")
+    course_level = fields.Selection(
+        [('ca_inter', 'CA Inter'), ('ca_final', 'CA Final'), ('cma_inter', 'CMA Inter'), ('cma_final', 'CMA Final')],
+        default="ca_inter", string="Level")
 
-    @api.onchange('batch_id', 'form_type')
+    @api.onchange('batch_id', 'form_type', 'course_level')
     def generate_link_crash_link(self):
+        if self.form_type != 'registration':
+            self.batch_id = False
+            self.course_level = False
         if not self.batch_id:
-            self.form_link = False
+            self.form_link = self.env.company.website + "/" + 'crash_form' + "/" + self.form_type
         else:
             self.form_link = self.generate_link(self.batch_id, 'crash_form')
 
@@ -105,7 +112,7 @@ class CrashFormLinkGenerationWizard(models.TransientModel):
         int_bytes = batch.id.to_bytes((batch.id.bit_length() + 7) // 8, 'big')
         base64_string = base64.b64encode(int_bytes).decode('utf-8')
         company_website = self.env.company.website
-        link = company_website + "/" + form_type + "/" + self.form_type + "/" + base64_string
+        link = company_website + "/" + form_type + "/" + self.course_level + "/" + self.form_type + "/" + base64_string
         return link
 
     def show_copy_successful(self):

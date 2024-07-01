@@ -1,0 +1,2205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="crash_registration_form_template" name="REGISTRATION FORM">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="registrationForm" action="/crash_form/registration/submit"
+                              enctype="multipart/form-data" class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="student_name"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">BATCH</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="batch_name"
+                                                   required=""
+                                                   t-att-value="batch_name" readonly="1"/>
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="batch_id"
+                                                   required=""
+                                                   t-att-value="batch_id" readonly="1" style="display:none"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Course Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="course_level"
+                                                   required=""
+                                                   t-att-value="course_level" readonly="1"/>
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="course_level"
+                                                   required=""
+                                                   t-att-value="course_level" readonly="1" style="display:none"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--                                <div class="form-group col-12 s_website_form_field s_website_form_required">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">How you know about us</span>-->
+
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm">-->
+                                <!--                                            <input type="text"-->
+                                <!--                                                   class="form-control s_website_form_input"-->
+                                <!--                                                   name="how_you_know_about_us"-->
+                                <!--                                            />-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                     data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">SUBJECT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="group"
+                                                       id="group_full_course" value="full_course"/>
+                                                <label class="form-check-label" for="group_full_course">
+                                                    Full Course
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="group" id="group_1"
+                                                       value="group_1"/>
+                                                <label class="form-check-label" for="group_1">
+                                                    Group 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="group" id="group_2"
+                                                       value="group_2"/>
+                                                <label class="form-check-label" for="group_2">
+                                                    Group 2
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="group"
+                                                       id="group_other" value="other"/>
+                                                <label class="form-check-label" for="group_other">
+                                                    Other
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!--                                <div class="form-group col-12 s_website_form_field s_website_form_required"-->
+                                <!--                                     data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Remarks</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm">-->
+                                <!--                                            <input type="text"-->
+                                <!--                                                   class="form-control s_website_form_input" name="remarks"-->
+                                <!--                                            />-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="form-group col-12 s_website_form_submit" data-name="Next Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="button" class="btn btn-primary" onclick="redirectToNextPage()">Next
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </section>
+                <script>
+                    function redirectToNextPage() {
+                    const formData = {
+                    student_name: document.querySelector('input[name="student_name"]').value,
+                    mobile_number: document.querySelector('input[name="mobile_number"]').value,
+                    whatsapp_number: document.querySelector('input[name="whatsapp_number"]').value,
+                    batch_name: document.querySelector('input[name="batch_name"]').value,
+                    batch_id: document.querySelector('input[name="batch_id"]').value,
+                    mail_id: document.querySelector('input[name="mail_id"]').value,
+                    address: document.querySelector('input[name="address"]').value,
+                    level_id: document.querySelector('select[name="level_id"]').value,
+                    group: document.querySelector('input[name="group"]:checked') ?
+                    document.querySelector('input[name="group"]:checked').value : null,
+                    course_level: document.querySelector('input[name="course_level"]').value,
+<!--                    document.querySelector('input[name="course_level"]:checked').value : null-->
+                    };
+                    console.log(formData, 'formData');
+
+                    // Store formData in session storage
+                    sessionStorage.setItem('registrationForm', JSON.stringify(formData));
+
+                    // Redirect based on the selected group and course level
+                    if (formData.group) {
+                    let nextPageUrl = '';
+                    if (formData.group === 'full_course' || formData.group === 'group_1' || formData.group ===
+                    'group_2') {
+                    nextPageUrl = '/crash_form/full_course';
+                    } else {
+                    if (formData.course_level === 'ca_inter') {
+                    nextPageUrl = '/crash_form/ca_inter/other_course';
+                    } else if (formData.course_level === 'cma_final') {
+                    nextPageUrl = '/crash_form/cma_final/other_course';
+                    } else if (formData.course_level === 'cma_inter') {
+                    nextPageUrl = '/crash_form/cma_inter/other_course';
+                    } else if (formData.course_level === 'ca_final') {
+                    nextPageUrl = '/crash_form/ca_final/other_course';
+                    } else {
+                    alert("Please select a valid course level.");
+                    return;
+                    }
+                    }
+                    window.location.href = nextPageUrl;
+                    } else {
+                    alert("Please select a group before proceeding.");
+                    }
+                    }
+                </script>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        </t>
+    </template>
+
+    <template id="crash_registration_full_course_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="fullCourseForm" action="/crash_form/full_course/submit" enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">PAYMENT SCREENSHOT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="payment_screenshot" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADMISSION OFFICER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="admission_officer"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Level</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm" required=" ">-->
+                                <!--                                            <select name="part" id="part"-->
+                                <!--                                                    class="form-control link-style">-->
+                                <!--                                                <option value="inter" t-esc="'Inter'"/>-->
+                                <!--                                                <option value="final" t-esc="'Final'"/>-->
+                                <!--                                            </select>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+
+                    }
+                    });
+                </script>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_registration_other_course_ca_inter_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="CAInterForm" action="/crash_form/ca_inter/other_course/submit"
+                              enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                     data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">SUBJECT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_2_audit_fm_sm_costing"
+                                                       value="group_2_audit_fm_sm_costing"/>
+                                                <label class="form-check-label" for="group_2_audit_fm_sm_costing">
+                                                    GROUP 2(AUDIT,FM,SM,COSTING)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="audit"
+                                                       value="audit"/>
+                                                <label class="form-check-label" for="audit">
+                                                    AUDIT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="fm"
+                                                       value="fm"/>
+                                                <label class="form-check-label" for="fm">
+                                                    FM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="sm"
+                                                       value="sm"/>
+                                                <label class="form-check-label" for="sm">
+                                                    SM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="costing"
+                                                       value="costing"/>
+                                                <label class="form-check-label" for="costing">
+                                                    COSTING
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_2_fm_sm_audit"
+                                                       value="group_2_fm_sm_audit"/>
+                                                <label class="form-check-label" for="group_2_fm_sm_audit">
+                                                    GROUP 2(FM,SM,AUDIT)
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">PAYMENT SCREENSHOT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="payment_screenshot" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADMISSION OFFICER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="admission_officer"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Level</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm" required=" ">-->
+                                <!--                                            <select name="part" id="part"-->
+                                <!--                                                    class="form-control link-style">-->
+                                <!--                                                <option value="inter" t-esc="'Inter'"/>-->
+                                <!--                                                <option value="final" t-esc="'Final'"/>-->
+                                <!--                                            </select>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+
+                    }
+                    });
+                </script>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_registration_other_course_ca_final_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="CAFinalForm" action="/crash_form/ca_final/other_course/submit"
+                              enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                     data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">SUBJECT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="full_course_group_1_group_2"
+                                                       value="full_course_group_1_group_2"/>
+                                                <label class="form-check-label" for="full_course_group_1_group_2">
+                                                    FULL COURSE(GROUP 1 AND GROUP 2)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_1_fr_audit_afm"
+                                                       value="group_1_fr_audit_afm"/>
+                                                <label class="form-check-label" for="group_1_fr_audit_afm">
+                                                    GROUP 1(FR,AUDIT,AFM)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_2_dt_idt"
+                                                       value="group_2_dt_idt"/>
+                                                <label class="form-check-label" for="group_2_dt_idt">
+                                                    GROUP 2(DT,IDT)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="fr"
+                                                       value="fr"/>
+                                                <label class="form-check-label" for="fr">
+                                                    FR
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="afm"
+                                                       value="afm"/>
+                                                <label class="form-check-label" for="afm">
+                                                    AFM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="audit"
+                                                       value="audit"/>
+                                                <label class="form-check-label" for="audit">
+                                                    AUDIT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="dt"
+                                                       value="dt"/>
+                                                <label class="form-check-label" for="dt">
+                                                    DT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="idt"
+                                                       value="idt"/>
+                                                <label class="form-check-label" for="idt">
+                                                    IDT
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">PAYMENT SCREENSHOT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="payment_screenshot" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADMISSION OFFICER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="admission_officer"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Level</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm" required=" ">-->
+                                <!--                                            <select name="part" id="part"-->
+                                <!--                                                    class="form-control link-style">-->
+                                <!--                                                <option value="inter" t-esc="'Inter'"/>-->
+                                <!--                                                <option value="final" t-esc="'Final'"/>-->
+                                <!--                                            </select>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+
+                    }
+                    });
+                </script>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_registration_other_course_cma_final_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="CMAFinalForm" action="/crash_form/cma_final/other_course/submit"
+                              enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                     data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">SUBJECT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="full_course_group_3_group_4"
+                                                       value="full_course_group_3_group_4"/>
+                                                <label class="form-check-label" for="full_course_group_3_group_4">
+                                                    FULL COURSE(GROUP 3 AND GROUP 4)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_3_dt_sfm_scm_law"
+                                                       value="group_3_dt_sfm_scm_law"/>
+                                                <label class="form-check-label" for="group_3_dt_sfm_scm_law">
+                                                    GROUP 3(DT,SFM,SCM,LAW)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="group_4_idt_cma_cfr_spm_bv"
+                                                       value="group_4_idt_cma_cfr_spm_bv"/>
+                                                <label class="form-check-label" for="group_4_idt_cma_cfr_spm_bv">
+                                                    GROUP 4(IDT,CMA,CFR,SPM,BV)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="dt"
+                                                       value="dt"/>
+                                                <label class="form-check-label" for="dt">
+                                                    DT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="sfm"
+                                                       value="sfm"/>
+                                                <label class="form-check-label" for="sfm">
+                                                    SFM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="scm"
+                                                       value="scm"/>
+                                                <label class="form-check-label" for="scm">
+                                                    SCM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="law"
+                                                       value="law"/>
+                                                <label class="form-check-label" for="law">
+                                                    LAW
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="idt"
+                                                       value="idt"/>
+                                                <label class="form-check-label" for="idt">
+                                                    IDT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="cma"
+                                                       value="cma"/>
+                                                <label class="form-check-label" for="cma">
+                                                    CMA
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="cfr"
+                                                       value="cfr"/>
+                                                <label class="form-check-label" for="cfr">
+                                                    CFR
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="spm_bv"
+                                                       value="spm_bv"/>
+                                                <label class="form-check-label" for="spm_bv">
+                                                    SPM AND BV
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">PAYMENT SCREENSHOT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="payment_screenshot" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADMISSION OFFICER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="admission_officer"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Level</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm" required=" ">-->
+                                <!--                                            <select name="part" id="part"-->
+                                <!--                                                    class="form-control link-style">-->
+                                <!--                                                <option value="inter" t-esc="'Inter'"/>-->
+                                <!--                                                <option value="final" t-esc="'Final'"/>-->
+                                <!--                                            </select>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+
+                    }
+                    });
+                </script>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_registration_other_course_cma_inter_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="CMAInterForm" action="/crash_form/cma_inter/other_course/submit"
+                              enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required"
+                                     data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">SUBJECT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="law"
+                                                       value="law"/>
+                                                <label class="form-check-label" for="law">
+                                                    LAW
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="financial_accounting"
+                                                       value="financial_accounting"/>
+                                                <label class="form-check-label" for="financial_accounting">
+                                                    FINANCIAL ACCOUNTING
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="dt"
+                                                       value="dt"/>
+                                                <label class="form-check-label" for="dt">
+                                                    DT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group" id="idt"
+                                                       value="idt"/>
+                                                <label class="form-check-label" for="idt">
+                                                    IDT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="cost_accounting"
+                                                       value="cost_accounting"/>
+                                                <label class="form-check-label" for="cost_accounting">
+                                                    COST ACCOUNTING
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="operation_management"
+                                                       value="operation_management"/>
+                                                <label class="form-check-label" for="operation_management">
+                                                    OPERATION MANAGEMENT
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="sm"
+                                                       value="sm"/>
+                                                <label class="form-check-label" for="sm">
+                                                    SM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="corporate_accounting"
+                                                       value="corporate_accounting"/>
+                                                <label class="form-check-label" for="corporate_accounting">
+                                                    CORPORATE ACCOUNTING
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="auditing"
+                                                       value="auditing"/>
+                                                <label class="form-check-label" for="auditing">
+                                                    AUDITING
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="fm"
+                                                       value="fm"/>
+                                                <label class="form-check-label" for="fm">
+                                                    FM
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="bda"
+                                                       value="bda"/>
+                                                <label class="form-check-label" for="bda">
+                                                    BDA
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sub_group"
+                                                       id="management_accounting"
+                                                       value="management_accounting"/>
+                                                <label class="form-check-label" for="management_accounting">
+                                                    MANAGEMENT ACCOUNTING
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">PAYMENT SCREENSHOT</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="payment_screenshot" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADMISSION OFFICER</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="admission_officer"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Level</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm" required=" ">-->
+                                <!--                                            <select name="part" id="part"-->
+                                <!--                                                    class="form-control link-style">-->
+                                <!--                                                <option value="inter" t-esc="'Inter'"/>-->
+                                <!--                                                <option value="final" t-esc="'Final'"/>-->
+                                <!--                                            </select>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+
+                    }
+                    });
+                </script>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_registration_other_form_template" name="Registration Form">
+        <t t-call="website.layout">
+            <div id="request_form">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <style>
+                    .hidden {
+                    display: none;
+                    }
+                </style>
+                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                    <div class="container">
+                        <h2 class="m-4 text-center">
+                            <u><b>REGISTRATION FORM</b></u>
+                        </h2>
+                        <form id="otherForm" action="/crash_form/other_course/submit" enctype="multipart/form-data"
+                              class="oe_import"
+                              method="post">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">STUDENT PHOTO</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="student_photo" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">HOW DID YOU KNOW ABOUT LOGIC
+                                            </span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="how_did_you_know"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">REMARKS</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="remarks"
+                                                   required=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">YOUR NAME</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="hidden" name="student_name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MOBILE NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="mobile_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">WHATSAPP NUMBER</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="whatsapp_number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Batch ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="number"
+                                                   class="form-control s_website_form_input" name="batch_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">MAIL ID</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="mail"
+                                                   class="form-control s_website_form_input" name="mail_id"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="hide">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Level</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <select class="form-control s_website_form_input" name="level_id"
+                                                    required="">
+                                                <option value="inter">Inter</option>
+                                                <option value="final">Final</option>
+                                                <!-- Add more options as needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">ADDRESS</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="address"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hidden">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Subject</span>
+
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text"
+                                                   class="form-control s_website_form_input" name="group"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <button type="submit" class="btn btn-primary" onclick="Submit()">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    // Retrieve formData from sessionStorage
+                    const formData = JSON.parse(sessionStorage.getItem('registrationForm'));
+                    if (formData) {
+                    // Populate the student_name field with the stored value
+                    document.querySelector('input[name="student_name"]').value = formData.student_name;
+                    document.querySelector('input[name="mobile_number"]').value = formData.mobile_number;
+                    document.querySelector('input[name="group"]').value = formData.group;
+                    document.querySelector('input[name="whatsapp_number"]').value = formData.whatsapp_number;
+                    document.querySelector('input[name="batch_id"]').value = formData.batch_id;
+                    document.querySelector('input[name="address"]').value = formData.address;
+                    document.querySelector('input[name="mail_id"]').value = formData.mail_id;
+                    document.querySelector('select[name="level_id"]').value = formData.level_id;
+                    }
+                    });
+                </script>
+            </div>
+        </t>
+    </template>
+
+    <template id="crash_student_form_submit_successful" name="Student Form Successfully Submitted">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
+                            <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
+                                     data-snippet="s_text_block" data-name="Text">
+                                <div class="container">
+                                    <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
+                                    <br/>
+                                    <h1 class="text-center">Thank You!</h1>
+                                    <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                    </div>
+                                    <h5 class="text-center">
+                                        <span class="fa fa-check-circle"/>
+                                        <span>Your details have been
+                                            successfully submitted
+                                        </span>
+                                    </h5>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-4">
+                            <t t-call="website.company_description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="crash_student_form_error" name="Error - Something went terribly wrong">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
+                            <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
+                                     data-snippet="s_text_block" data-name="Text">
+                                <div class="container">
+                                    <span class="d-block fa fa-4x fa-frown-o mx-auto rounded-circle bg-primary"/>
+                                    <br/>
+                                    <h1 class="text-center">Something went terribly wrong!</h1>
+                                    <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                    </div>
+                                    <h5 class="text-center">
+                                        <span class="fa fa-warning"/>
+                                        <span>Please check if the entered link is correct. Contact your coordinator if
+                                            the error keeps persisting.
+                                        </span>
+                                    </h5>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-4">
+                            <t t-call="website.company_description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
+            </div>
+        </t>
+    </template>
+</odoo>

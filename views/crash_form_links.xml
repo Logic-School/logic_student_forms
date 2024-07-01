@@ -33,9 +33,12 @@
                         <label for="batch_id"/>
 
                         <div class="o_row">
-                            <field name="batch_id" placeholder="Select Batch" options="{'no_create':True}"/>
                             <field name="form_type"/>
+                            <field name="batch_id" placeholder="Select Batch" options="{'no_create':True}"
+                                   attrs="{'invisible':[('form_type','!=','registration')], 'required': [('form_type','=','registration')]}"/>
+                            <field name="course_level" attrs="{'invisible':[('form_type','!=','registration')], 'required': [('form_type','=','registration')]}"/>
                             <field name="form_link"/>
+
 
                             <!-- <button name="start_zoom_meeting" type="object"  class="btn-success"
                             attrs="{'invisible':[('zoom_meeting_link','=',False)]}">Start

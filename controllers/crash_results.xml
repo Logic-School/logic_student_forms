@@ -21,7 +21,7 @@
                 <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
                     <div class="container">
                         <h2 class="m-4 text-center">
-                            <u>Result Form</u>
+                            <u><b>RESULT FORM</b></u>
                         </h2>
                         <form action="/crash_form/results/submit" enctype="multipart/form-data" class="oe_import"
                               method="post">
@@ -71,7 +71,7 @@
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                         <label class="col-form-label col-sm-auto s_website_form_label"
                                                style="width: 200px">
-                                            <span class="s_website_form_label_content">Course</span>
+                                            <span class="s_website_form_label_content">Level</span>
                                         </label>
                                         <div class="col-sm" required=" ">
                                             <select name="part" id="part"

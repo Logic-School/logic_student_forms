@@ -5,5 +5,6 @@ from . import class_commencement_form
 from . import faculty_feedback_form
 from . import result_service_form
 from . import acca_results_form
-from . import crash_registration_form
+from . import crash_mentoring_form
 from . import crash_results_form
+from . import crash_registration

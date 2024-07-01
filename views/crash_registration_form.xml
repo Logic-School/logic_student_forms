@@ -35,6 +35,10 @@
             <tree>
                 <field name="student_name"/>
                 <field name="mobile_number"/>
+                <field name="email"/>
+                <field name="student_whatsapp"/>
+                <field name="batch_id"/>
+                <field name="subject"/>
             </tree>
         </field>
     </record>
@@ -51,8 +55,22 @@
                             <field name="mobile_number"/>
                             <field name="email"/>
                             <field name="student_whatsapp"/>
+                            <field name="batch_id"/>
+                            <field name="level"/>
+                            <field name="subject"/>
+                            <field name="other_subject" attrs="{'invisible':[('subject', '!=', 'other')]}"/>
+                            <field name="address"/>
+                            <!--                            <field name="how_do_you_know_about_us"/>-->
+                            <!--                            <field name="remarks"/>-->
+                        </group>
+                        <group>
+                            <field name="student_photo" widget="binary"/>
+                            <field name="payment_screenshot" widget="binary"
+                                   attrs="{'invisible':[('subject', '=', 'other')]}"/>
+                            <field name="admission_officer"/>
                             <field name="how_do_you_know_about_us"/>
                             <field name="remarks"/>
+
                         </group>
                     </group>
                 </sheet>

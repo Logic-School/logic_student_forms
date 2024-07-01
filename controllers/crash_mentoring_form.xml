@@ -7,7 +7,7 @@
             <link rel="stylesheet" type="text/css" href="student_feedback/static/src/css/rating.css"/>
         </xpath>
     </template> -->
-    <template id="crash_registration_form_template" name="Registration Form">
+    <template id="crash_mentoring_form_template" name="Mentoring Form">
         <t t-call="website.layout">
             <div id="request_form">
                 <script>
@@ -21,9 +21,9 @@
                 <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
                     <div class="container">
                         <h2 class="m-4 text-center">
-                            <u>Registration Form</u>
+                            <u><b>MENTORING FORM</b></u>
                         </h2>
-                        <form action="/crash_form/registration/submit" enctype="multipart/form-data" class="oe_import"
+                        <form action="/crash_form/mentoring/submit" enctype="multipart/form-data" class="oe_import"
                               method="post">
                             <div class="s_website_form_rows row s_col_no_bgcolor">
                                 <div class="form-group col-12 s_website_form_field s_website_form_required">
@@ -71,25 +71,25 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-12 s_website_form_field s_website_form_required">
-                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                        <label class="col-form-label col-sm-auto s_website_form_label"
-                                               style="width: 200px">
-                                            <span class="s_website_form_label_content">Batch Name</span>
-                                            <span class="s_website_form_mark">*</span>
-                                        </label>
-                                        <div class="col-sm">
-                                            <input type="text"
-                                                   class="form-control s_website_form_input" name="batch_name"
-                                                   required=""
-                                                   t-att-value="batch_name" readonly="1"/>
-                                            <input type="text"
-                                                   class="form-control s_website_form_input" name="batch_id"
-                                                   required=""
-                                                   t-att-value="batch_id" readonly="1" style="display:none"/>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--                                <div class="form-group col-12 s_website_form_field s_website_form_required">-->
+                                <!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+                                <!--                                        <label class="col-form-label col-sm-auto s_website_form_label"-->
+                                <!--                                               style="width: 200px">-->
+                                <!--                                            <span class="s_website_form_label_content">Batch Name</span>-->
+                                <!--                                            <span class="s_website_form_mark">*</span>-->
+                                <!--                                        </label>-->
+                                <!--                                        <div class="col-sm">-->
+                                <!--                                            <input type="text"-->
+                                <!--                                                   class="form-control s_website_form_input" name="batch_name"-->
+                                <!--                                                   required=""-->
+                                <!--                                                   t-att-value="batch_name" readonly="1"/>-->
+                                <!--                                            <input type="text"-->
+                                <!--                                                   class="form-control s_website_form_input" name="batch_id"-->
+                                <!--                                                   required=""-->
+                                <!--                                                   t-att-value="batch_id" readonly="1" style="display:none"/>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
 
                                 <div class="form-group col-12 s_website_form_field s_website_form_required">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
@@ -157,7 +157,8 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button" align="center">
+                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button"
+                                     align="center">
                                     <div style="width: 200px;" class="s_website_form_label"/>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -169,73 +170,73 @@
         </t>
     </template>
 
-        <template id="crash_student_form_submit_successful" name="Student Form Successfully Submitted">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
-                    <div class="container mt-4">
-                        <div class="row">
-                            <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
-                                <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
-                                         data-snippet="s_text_block" data-name="Text">
-                                    <div class="container">
-                                        <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
-                                        <br/>
-                                        <h1 class="text-center">Thank You!</h1>
-                                        <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
-                                            <hr class="mx-auto border-top w-50 border-dark text-center"/>
-                                        </div>
-                                        <h5 class="text-center">
-                                            <span class="fa fa-check-circle"/>
-                                            <span>Your details have been
-                                                successfully submitted
-                                            </span>
-                                        </h5>
+    <template id="crash_student_form_submit_successful" name="Student Form Successfully Submitted">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
+                            <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
+                                     data-snippet="s_text_block" data-name="Text">
+                                <div class="container">
+                                    <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
+                                    <br/>
+                                    <h1 class="text-center">Thank You!</h1>
+                                    <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="mx-auto border-top w-50 border-dark text-center"/>
                                     </div>
-                                </section>
-                            </div>
-                            <div class="col-lg-4">
-                                <t t-call="website.company_description"/>
-                            </div>
+                                    <h5 class="text-center">
+                                        <span class="fa fa-check-circle"/>
+                                        <span>Your details have been
+                                            successfully submitted
+                                        </span>
+                                    </h5>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-4">
+                            <t t-call="website.company_description"/>
                         </div>
                     </div>
-                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
                 </div>
-            </t>
-        </template>
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
+            </div>
+        </t>
+    </template>
 
-
-        <template id="crash_student_form_error" name="Error - Something went terribly wrong">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
-                    <div class="container mt-4">
-                        <div class="row">
-                            <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
-                                <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
-                                         data-snippet="s_text_block" data-name="Text">
-                                    <div class="container">
-                                        <span class="d-block fa fa-4x fa-frown-o mx-auto rounded-circle bg-primary"/>
-                                        <br/>
-                                        <h1 class="text-center">Something went terribly wrong!</h1>
-                                        <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
-                                            <hr class="mx-auto border-top w-50 border-dark text-center"/>
-                                        </div>
-                                        <h5 class="text-center">
-                                            <span class="fa fa-warning"/>
-                                            <span>Please check if the entered link is correct. Contact your coordinator if the error keeps persisting.
-                                            </span>
-                                        </h5>
+    <template id="crash_student_form_error" name="Error - Something went terribly wrong">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
+                            <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1"
+                                     data-snippet="s_text_block" data-name="Text">
+                                <div class="container">
+                                    <span class="d-block fa fa-4x fa-frown-o mx-auto rounded-circle bg-primary"/>
+                                    <br/>
+                                    <h1 class="text-center">Something went terribly wrong!</h1>
+                                    <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="mx-auto border-top w-50 border-dark text-center"/>
                                     </div>
-                                </section>
-                            </div>
-                            <div class="col-lg-4">
-                                <t t-call="website.company_description"/>
-                            </div>
+                                    <h5 class="text-center">
+                                        <span class="fa fa-warning"/>
+                                        <span>Please check if the entered link is correct. Contact your coordinator if
+                                            the error keeps persisting.
+                                        </span>
+                                    </h5>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-4">
+                            <t t-call="website.company_description"/>
                         </div>
                     </div>
-                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
                 </div>
-            </t>
-        </template>
+                <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
+            </div>
+        </t>
+    </template>
 </odoo>
