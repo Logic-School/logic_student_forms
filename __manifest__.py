@@ -7,6 +7,7 @@
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
+        'security/rules.xml',
         'controllers/winners_meet.xml',
         'controllers/hock_access.xml',
         'controllers/text_material.xml',

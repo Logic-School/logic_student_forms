@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="winners_meet_security_rules" model="ir.rule">
+            <field name="name">See Only Own Batch Students</field>
+            <field name="model_id" ref="model_logic_winners_meet"/>
+            <field name="domain_force">[('batch_id.academic_coordinator.id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('form_crash_department'))]"/>
+
+        </record>
+</odoo>
