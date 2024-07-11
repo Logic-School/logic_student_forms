@@ -67,6 +67,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group col-12 s_website_form_field s_website_form_required">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label"
+                                               style="width: 200px">
+                                            <span class="s_website_form_label_content">Attach Your Result</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" name="attach_result" class="file" multiple="true"
+                                                   data-show-upload="true" data-show-caption="true" lass="file"
+                                                   data-show-preview="true" accept="image/*" required=" "/>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group col-12 s_website_form_field" data-type="char" data-name="Field">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                         <label class="col-form-label col-sm-auto s_website_form_label"

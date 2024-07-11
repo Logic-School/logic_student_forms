@@ -23,12 +23,13 @@ class CrashResultsForm(http.Controller):
         try:
             print(kw)
             student_photo = kw.get('student_photo')
-            result_screenshot = kw.get('result_screenshot')
+            attach_result = kw.get('attach_result')
             request.env["logic.crash.result.forms"].sudo().create({
                 'student_name': kw.get('student_name'),
                 'mobile_number': kw.get('contact_number'),
                 # 'email_from': post.get('email'),
                 'group': kw.get('part_group'),
+                'attach_result': base64.b64encode(attach_result.read()) if type(attach_result) != str else False,
                 'student_photo': base64.b64encode(student_photo.read()) if type(student_photo) != str else False,
                 'level': kw.get('part'),
                 'remarks': kw.get('remarks'),

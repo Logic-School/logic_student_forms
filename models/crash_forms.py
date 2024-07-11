@@ -45,6 +45,7 @@ class CrashResultsForms(models.Model):
 
     student_name = fields.Char(string="Student Name")
     student_photo = fields.Binary(string="Student Photo")
+    attach_result = fields.Binary(string="Attach Result")
     level = fields.Selection([('inter', 'Inter'), ('final', 'Final')], string="Level")
     mobile_number = fields.Char(string="Mobile Number")
     group = fields.Selection([('first_group', 'First Group'), ('second_group', 'Second Group'), ('both', 'Both')],

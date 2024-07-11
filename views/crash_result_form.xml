@@ -37,6 +37,7 @@
                             <field name="student_name"/>
                             <field name="mobile_number"/>
                             <field name="student_photo" widget="binary"/>
+                            <field name="attach_result" widget="binary"/>
                             <field name="level"/>
                             <field name="group"/>
                             <field name="remarks"/>
