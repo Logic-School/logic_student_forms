@@ -1,6 +1,6 @@
 from odoo import http
 from odoo.http import request
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 import base64
 import io
 import xlsxwriter
@@ -100,33 +100,41 @@ class InvoiceExcelReportController(http.Controller):
 
             # Manage the size of the student photo
             if line.get('student_photo'):
-                student_photo_data = io.BytesIO(base64.b64decode(line['student_photo']))
-                student_photo_image = Image.open(student_photo_data)
-                student_photo_path = f'/tmp/student_photo_{row}.png'
-                student_photo_image.save(student_photo_path)
+                try:
+                    student_photo_data = io.BytesIO(base64.b64decode(line['student_photo']))
+                    student_photo_image = Image.open(student_photo_data)
+                    student_photo_path = f'/tmp/student_photo_{row}.png'
+                    student_photo_image.save(student_photo_path)
 
-                # Set desired width and height for images
-                image_width = 100
-                image_height = 100
-                x_scale = image_width / student_photo_image.width
-                y_scale = image_height / student_photo_image.height
+                    # Set desired width and height for images
+                    image_width = 100
+                    image_height = 100
+                    x_scale = image_width / student_photo_image.width
+                    y_scale = image_height / student_photo_image.height
 
-                sheet.insert_image(row, 2, student_photo_path, {'x_scale': x_scale, 'y_scale': y_scale})
+                    sheet.insert_image(row, 2, student_photo_path, {'x_scale': x_scale, 'y_scale': y_scale})
+                except (base64.binascii.Error, UnidentifiedImageError):
+                    # Handle invalid image data
+                    sheet.write(row, 2, 'Invalid image')
 
             # Manage the size of the attached result image
             if line.get('attach_result'):
-                attach_result_data = io.BytesIO(base64.b64decode(line['attach_result']))
-                attach_result_image = Image.open(attach_result_data)
-                attach_result_path = f'/tmp/attach_result_{row}.png'
-                attach_result_image.save(attach_result_path)
+                try:
+                    attach_result_data = io.BytesIO(base64.b64decode(line['attach_result']))
+                    attach_result_image = Image.open(attach_result_data)
+                    attach_result_path = f'/tmp/attach_result_{row}.png'
+                    attach_result_image.save(attach_result_path)
 
-                # Set desired width and height for images
-                image_width = 100
-                image_height = 100
-                x_scale = image_width / attach_result_image.width
-                y_scale = image_height / attach_result_image.height
+                    # Set desired width and height for images
+                    image_width = 100
+                    image_height = 100
+                    x_scale = image_width / attach_result_image.width
+                    y_scale = image_height / attach_result_image.height
 
-                sheet.insert_image(row, 3, attach_result_path, {'x_scale': x_scale, 'y_scale': y_scale})
+                    sheet.insert_image(row, 3, attach_result_path, {'x_scale': x_scale, 'y_scale': y_scale})
+                except (base64.binascii.Error, UnidentifiedImageError):
+                    # Handle invalid image data
+                    sheet.write(row, 3, 'Invalid image')
 
             sheet.write(row, 4, line.get('level', ''))
             sheet.write(row, 5, line.get('mobile_number', ''))
