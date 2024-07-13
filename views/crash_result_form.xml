@@ -20,6 +20,8 @@
                 <field name="mobile_number"/>
                 <field name="level"/>
                 <field name="group"/>
+                <field name="student_photo" widget="binary"/>
+                <field name="attach_result" widget="binary"/>
             </tree>
         </field>
     </record>
@@ -29,6 +31,9 @@
         <field name="model">logic.crash.result.forms</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <!--                    <button name="print_xlsx_report" type="object" string="Export To Excel"/>-->
+                </header>
                 <sheet>
                     <!--                    <field name="student_photo" widget='image' class="oe_avatar"-->
                     <!--                           options='{"zoom": true, "preview_image":"student_photo"}'/>-->
@@ -36,15 +41,44 @@
                         <group>
                             <field name="student_name"/>
                             <field name="mobile_number"/>
-                            <field name="student_photo" widget="binary"/>
-                            <field name="attach_result" widget="binary"/>
+                            <field name="student_photo" widget="image"/>
+                            <field name="attach_result" widget="image"/>
                             <field name="level"/>
                             <field name="group"/>
                             <field name="remarks"/>
                         </group>
+<!--                        <group string="Download">-->
+<!--                            <field name="student_photo_download" widget="binary"/>-->
+<!--                            <field name="attach_result_download" widget="binary"/>-->
+<!--                        </group>-->
+                        <group>
+                            <field name="added_date"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+    <record model="ir.actions.server" id="action_for_export_result_forms">
+        <field name="name">Download Result Forms</field>
+        <field name="model_id" ref="model_logic_crash_result_forms"/>
+        <!--        <field name="groups_id" eval="[(4, ref('leads.leads_admin'))]"/>-->
+        <field name="binding_model_id" ref="model_logic_crash_result_forms"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.print_xlsx_report()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="action_for_add_create_date">
+        <field name="name">Add Create Date</field>
+        <field name="model_id" ref="model_logic_crash_result_forms"/>
+        <!--        <field name="groups_id" eval="[(4, ref('leads.leads_admin'))]"/>-->
+        <field name="binding_model_id" ref="model_logic_crash_result_forms"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.add_created_date()
         </field>
     </record>
 </odoo>

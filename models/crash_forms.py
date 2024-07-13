@@ -1,4 +1,10 @@
-from odoo import models, fields, api
+import base64
+import io
+import xlsxwriter
+
+from odoo import models, fields,api, _
+from odoo.exceptions import UserError
+
 
 
 class CrashRegistrationForms(models.Model):
@@ -51,6 +57,49 @@ class CrashResultsForms(models.Model):
     group = fields.Selection([('first_group', 'First Group'), ('second_group', 'Second Group'), ('both', 'Both')],
                              string="Group")
     remarks = fields.Char(string="Remarks")
+    added_date = fields.Date(string="Added Date", default=lambda self: fields.Date.today())
+    student_photo_download = fields.Binary(string="Student Photo Download")
+    attach_result_download = fields.Binary(string="Attach Result Download")
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('added_date'):
+            vals['added_date'] = fields.Date.context_today(self)
+        return super(CrashResultsForms, self).create(vals)
+
+    def print_xlsx_report(self):
+        active_ids = self.env.context.get('active_ids', [])
+        if not active_ids:
+            return {'type': 'ir.actions.act_window_close'}  # Or handle no IDs case as needed
+        for record in self:
+            return {
+                'type': 'ir.actions.act_url',
+                'url': '/crash/results?ids=%s' % ','.join(map(str, active_ids)),
+                'target': 'new',
+            }
+
+    def get_report_lines(self, active_ids):
+        report_lines = []
+        records = self.search([('id', 'in', active_ids)])
+        for record in records:
+            line = {
+                'student_name': record.student_name,
+                'student_photo': record.student_photo,
+                'attach_result': record.attach_result,
+                'level': record.level or '',
+                'mobile_number': record.mobile_number or '',
+                'group': dict(record._fields['group'].selection).get(record.group, ''),
+                'remarks': record.remarks or '',
+            }
+            report_lines.append(line)
+        return report_lines
+
+    def add_created_date(self):
+        active_ids = self.env.context.get('active_ids', [])
+        rec = self.env['logic.crash.result.forms'].browse(active_ids)
+        for record in rec:
+
+            record.added_date = record.create_date
 
 
 class CrashMentoringForms(models.Model):
