@@ -16,17 +16,19 @@
     <menuitem name="Crash Forms" id="menu_crash_form"
               parent="menu_student_forms"
               sequence="5"
-              groups="logic_student_forms.form_crash_department"/>
+              groups="logic_student_forms.form_crash_department,logic_digital_tracker.group_digital_executive,logic_digital_tracker.group_digital_head"/>
 
     <menuitem name="Registration Form" id="menu_paper_options"
               parent="menu_crash_form"
               sequence="1"
-              action="registration_form_crash"/>
+              action="registration_form_crash"
+              groups="logic_student_forms.form_crash_department"/>
 
     <!--    <menuitem name="Paper Options With Mode" id="menu_paper_options_mode"-->
     <!--              parent="menu_paper_options_parent"-->
     <!--              sequence="7"-->
     <!--              action="paper_options_mode_action"/>-->
+
 
     <record id="registration_list_view" model="ir.ui.view">
         <field name="name">Registration Tree</field>

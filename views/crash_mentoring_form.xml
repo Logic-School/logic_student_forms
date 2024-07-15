@@ -11,12 +11,14 @@
     <menuitem name="Mentoring Form" id="menu_mentoring_crash_form"
               parent="menu_crash_form"
               sequence="5"
-              action="mentoring_form_crash"/>
+              action="mentoring_form_crash"
+              groups="logic_student_forms.form_crash_department"/>
 
     <!--    <menuitem name="Paper Options With Mode" id="menu_paper_options_mode"-->
     <!--              parent="menu_paper_options_parent"-->
     <!--              sequence="7"-->
     <!--              action="paper_options_mode_action"/>-->
+
 
     <record id="mentoring_list_view" model="ir.ui.view">
         <field name="name">Mentoring Tree</field>
