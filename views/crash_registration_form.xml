@@ -24,6 +24,16 @@
               action="registration_form_crash"
               groups="logic_student_forms.form_crash_department"/>
 
+    <menuitem name="Configuration" id="menu_configuration_crash"
+              parent="menu_student_forms"
+              sequence="10"/>
+
+    <menuitem name="Lock Date" id="menu_lock_date_crash"
+              parent="menu_configuration_crash"
+              action="registration_form_crash"
+
+              sequence="10"/>
+
     <!--    <menuitem name="Paper Options With Mode" id="menu_paper_options_mode"-->
     <!--              parent="menu_paper_options_parent"-->
     <!--              sequence="7"-->

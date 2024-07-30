@@ -3,11 +3,12 @@
     'author': 'Rizwaan',
     'version': "14.0.1.0",
     'sequence': "0",
-    'depends': ['base','website','logic_base','faculty', 'logic_digital_tracker'],
+    'depends': ['base', 'website', 'logic_base', 'faculty', 'logic_digital_tracker'],
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
         'security/rules.xml',
+        'data/server_action.xml',
         'controllers/winners_meet.xml',
         'controllers/hock_access.xml',
         'controllers/text_material.xml',
@@ -27,6 +28,7 @@
         'views/crash_result_form.xml',
         'views/crash_mentoring_form.xml',
         'controllers/crash_registration.xml',
+
     ],
     'demo': [],
     'summary': "Student Forms",

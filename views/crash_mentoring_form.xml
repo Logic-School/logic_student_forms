@@ -45,6 +45,8 @@
                             <field name="mobile_number"/>
                             <field name="email"/>
                             <field name="student_whatsapp"/>
+                            <field name="course"/>
+                            <field name="appearing_attempt"/>
                             <field name="how_do_you_know_about_us"/>
                             <field name="remarks"/>
                         </group>

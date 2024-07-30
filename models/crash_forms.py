@@ -113,3 +113,5 @@ class CrashMentoringForms(models.Model):
     student_whatsapp = fields.Char(string="Student Whatsapp")
     how_do_you_know_about_us = fields.Char(string="How do you know about us")
     remarks = fields.Char(string="Remarks")
+    appearing_attempt = fields.Char(string="Appearing Attempt")
+    course = fields.Selection([('inter', 'Inter'), ('final', 'Final')], string="Course")
