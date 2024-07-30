@@ -26,7 +26,8 @@ class CrashRegistrationForm(http.Controller):
             request.env["logic.crash.mentoring.forms"].sudo().create({
                 'student_name': kw.get('student_name'),
                 'mobile_number': kw.get('mobile_number'),
-
+                'course': kw.get('course'),
+                'appearing_attempt': kw.get('appearing_attempts'),
                 'email': kw.get('mail_id'),
                 'student_whatsapp': kw.get('whatsapp_number'),
                 'how_do_you_know_about_us': kw.get('how_you_know_about_us'),
